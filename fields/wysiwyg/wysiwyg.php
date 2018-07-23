@@ -25,7 +25,7 @@ class CSFramework_Option_Wysiwyg extends CSFramework_Options {
     $settings    = ( ! empty( $this->field['settings'] ) ) ? $this->field['settings'] : array();
     $settings    = wp_parse_args( $settings, $defaults );
 
-    $field_id    = ( ! empty( $this->field['id'] ) ) ? $this->field['id'] : '';
+    $field_id    = ( ! empty( $this->field['id'] ) ) ? $this->field['id'] . '_' . rand() : '';
     $field_value = $this->element_value();
 
     wp_editor( $field_value, $field_id, $settings );
